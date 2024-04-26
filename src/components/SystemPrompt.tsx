@@ -1,32 +1,32 @@
 // components/SystemPrompt.tsx
 
-
 import React from 'react';
-import { Box, Typography, LinearProgress, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import { styled } from '@mui/system';
+import { Accordion, AccordionProps, AccordionSummary, AccordionDetails, Box, Typography, LinearProgress } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-const PromptBox = styled(Accordion)<{ isProcessing: boolean }>`
-  background: ${({ isProcessing }) =>
-    isProcessing
-      ? 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #ff6b6b)'
-      : 'white'};
-  background-size: 400% 400%;
-  animation: ${({ isProcessing }) =>
-    isProcessing ? 'gradient 5s ease infinite' : 'none'};
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+import { styled } from '@mui/system';
+interface StyledAccordionProps extends AccordionProps {
+    isProcessing: boolean;
   }
-`;
+  const PromptBox = styled(Accordion, {
+    shouldForwardProp: (prop) => prop !== 'isProcessing',
+  })<StyledAccordionProps>(({ theme, isProcessing }) => ({
+    background: isProcessing
+      ? 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #ff6b6b)'
+      : 'white',
+    backgroundSize: '400% 400%',
+    animation: isProcessing ? 'gradient 5s ease infinite' : 'none',
+    '@keyframes gradient': {
+      '0%': {
+        backgroundPosition: '0% 50%',
+      },
+      '50%': {
+        backgroundPosition: '100% 50%',
+      },
+      '100%': {
+        backgroundPosition: '0% 50%',
+      },
+    },
+  }));
 
 interface SystemPromptProps {
   isProcessing: boolean;

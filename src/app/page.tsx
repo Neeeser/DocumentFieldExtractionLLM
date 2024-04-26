@@ -8,7 +8,7 @@ import ContractFieldsTable from '../components/ContractFieldsTable';
 import ProcessButton from '../components/ProcessButton';
 import SystemPrompt from '../components/SystemPrompt';
 
-const UploadPage: React.FC = () => {
+const UploadPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
   const [text, setText] = React.useState<string>('');
   const [response, setResponse] = React.useState<Record<string, string | null> | null>(null);
