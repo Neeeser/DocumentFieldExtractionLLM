@@ -16,7 +16,7 @@ import {
   AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import SystemPrompt from '@/components/SystemPrompt';
+import SystemPrompt from '../../components/SystemPrompt';
 
 const ContractAssistantDemo = () => {
   const contractTypes = [
