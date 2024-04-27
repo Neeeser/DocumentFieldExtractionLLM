@@ -11,10 +11,10 @@ interface StyledAccordionProps extends AccordionProps {
     shouldForwardProp: (prop) => prop !== 'isProcessing',
   })<StyledAccordionProps>(({ theme, isProcessing }) => ({
     background: isProcessing
-      ? 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #ff6b6b)'
+      ? 'linear-gradient(45deg, #f5f5f5, #e0f2f1, #f5f5f5)'
       : 'white',
-    backgroundSize: '400% 400%',
-    animation: isProcessing ? 'gradient 5s ease infinite' : 'none',
+    backgroundSize: '200% 200%',
+    animation: isProcessing ? 'gradient 3s ease infinite' : 'none',
     '@keyframes gradient': {
       '0%': {
         backgroundPosition: '0% 50%',
