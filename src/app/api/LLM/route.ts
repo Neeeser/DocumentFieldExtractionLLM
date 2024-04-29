@@ -11,7 +11,6 @@ export async function POST(request: NextRequest) {
     const { prompt } = body;
     console.log(prompt);
 
-    const userPromptFile = fs.readFileSync(path.join(process.cwd(), 'src/app', 'prompts', 'user_prompt.txt'), 'utf-8');
     const sysPromptFile = fs.readFileSync(path.join(process.cwd(), 'src/app', 'prompts', 'sys_prompt_instruct.txt'), 'utf-8');
 
     const userPrompt = `<document>${prompt}<document>`;
@@ -22,7 +21,7 @@ export async function POST(request: NextRequest) {
                 { role: 'system', content: sysPromptFile },
                 { role: 'user', content: userPrompt },
             ],
-            model: 'gpt-4-turbo',
+            model: 'gpt-3.5-turbo',
             temperature: 0.1
         });
 
