@@ -6,4 +6,4 @@ For each input field you identify, determine an appropriate field name that clea
 Construct a JSON object where each identified input field is a key-value pair. The key should be the field name you defined, and the value should be a null placeholder.
 Output the completed JSON object containing all the input fields and field names found in the contract.
 
-The user will provide the contract file, inserted between <document> tags. You should return only the JSON object, without any other text.
+The user will provide the contract file, inserted between <document> tags. You should return only the JSON object, without any other text. Do not put the JSON object in ```json just plain text
