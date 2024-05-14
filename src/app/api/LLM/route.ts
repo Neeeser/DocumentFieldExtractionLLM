@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
                 { role: 'system', content: sysPromptFile },
                 { role: 'user', content: userPrompt },
             ],
-            model: 'gpt-3.5-turbo',
+            model: 'gpt-4o',
             temperature: 0.1
         });
 
@@ -37,11 +37,11 @@ export async function POST(request: NextRequest) {
 
 function parseLLMOutput(output: string): Record<string, string | null> {
     try {
-      const parsedOutput: Record<string, string | null> = JSON.parse(output);
-      console.log(parsedOutput);
-      return parsedOutput;
+        const parsedOutput: Record<string, string | null> = JSON.parse(output);
+        console.log(parsedOutput);
+        return parsedOutput;
     } catch (error) {
-      console.error('Failed to parse JSON:', error);
-      return {};
+        console.error('Failed to parse JSON:', error);
+        return {};
     }
-  }
+}

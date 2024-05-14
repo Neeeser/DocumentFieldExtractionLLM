@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         { role: 'system', content: sysPromptFile },
         { role: 'user', content: userPrompt },
       ],
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4o',
       temperature: 0.8
     });
 
